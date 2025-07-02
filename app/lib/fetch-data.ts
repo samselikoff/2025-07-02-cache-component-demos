@@ -1,11 +1,6 @@
-import invariant from 'tiny-invariant';
-import { domain } from './domain';
-
 export async function fetchRandomNumber(query = 'foo') {
-  const res = await fetch(`${domain}/api?${query}`);
-  const { data } = await res.json();
+  console.log(query);
+  await fetch(`https://httpbin.org/delay/1`);
 
-  invariant(typeof data === 'number');
-
-  return data;
+  return Math.random();
 }
