@@ -25,7 +25,7 @@ export default async function Page() {
 
 async function RandomNumber({ name }: { name: string }) {
   'use cache';
-  cacheLife({ revalidate: 5 });
+  cacheLife({ revalidate: 10 });
 
   const number = await fetchRandomNumber(name);
   console.log(name, ' ', number);
