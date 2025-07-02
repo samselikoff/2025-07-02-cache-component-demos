@@ -1,4 +1,4 @@
-import { fetchRandomNumber } from '@/app/lib/fetch-data';
+import { fetchCurrentTime } from '@/app/lib/fetch-data';
 import { unstable_cacheLife as cacheLife } from 'next/cache';
 import { connection } from 'next/server';
 import { ReactNode, Suspense } from 'react';
@@ -27,7 +27,7 @@ async function RandomNumber({ name }: { name: string }) {
   'use cache';
   cacheLife({ revalidate: 10 });
 
-  const number = await fetchRandomNumber(name);
+  const number = await fetchCurrentTime(name);
   console.log(name, ' ', number);
 
   return (

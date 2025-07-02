@@ -1,5 +1,5 @@
 import Spinner from '@/app/_components/Spinner';
-import { fetchRandomNumber } from '@/app/lib/fetch-data';
+import { fetchCurrentTime } from '@/app/lib/fetch-data';
 import { Suspense } from 'react';
 
 export default function Page() {
@@ -14,7 +14,7 @@ export default function Page() {
 }
 
 async function RandomNumber() {
-  const number = await fetchRandomNumber();
+  const number = await fetchCurrentTime();
   console.log(number);
 
   return <p>{number}</p>;

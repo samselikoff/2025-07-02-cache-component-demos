@@ -1,4 +1,4 @@
-import { fetchRandomNumber } from '@/app/lib/fetch-data';
+import { fetchCurrentTime } from '@/app/lib/fetch-data';
 import { unstable_cacheLife as cacheLife } from 'next/cache';
 
 export default function Page() {
@@ -14,7 +14,7 @@ async function RandomNumber() {
   'use cache';
   cacheLife({ revalidate: 10 });
 
-  const number = await fetchRandomNumber();
+  const number = await fetchCurrentTime();
   console.log(number);
 
   return <p>{number}</p>;
