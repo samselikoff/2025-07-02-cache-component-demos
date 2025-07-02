@@ -12,7 +12,7 @@ export default function Page() {
 
 async function RandomNumber() {
   'use cache';
-  cacheLife('minutes');
+  cacheLife({ revalidate: 10 });
 
   const number = await fetchRandomNumber();
   console.log(number);
